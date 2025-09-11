@@ -28,19 +28,13 @@
     .cursor-light {
       position: fixed;
       width: 500px;
-      /* adjust size */
       height: 500px;
       pointer-events: none;
       background: radial-gradient(circle at center,
           rgba(0, 204, 255, 0.12) 0%,
-          /* slightly stronger center */
           rgba(0, 204, 255, 0.06) 35%,
-          /* soft middle */
-          transparent 70%
-          /* smooth fade out */
-        );
+          transparent 70%);
       transform: translate(-50%, -50%);
-      /* center aligns */
       mix-blend-mode: screen;
       filter: blur(20px);
       z-index: 9999;
