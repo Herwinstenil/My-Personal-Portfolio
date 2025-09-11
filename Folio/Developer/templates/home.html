@@ -343,7 +343,7 @@
     }
 
     .skills-icons .icon::after {
-      content: attr(title);
+      content: attr(data-tooltip);
       position: absolute;
       top: -35px;
       left: 50%;
@@ -903,28 +903,28 @@
 
         <!-- Tech Icons Row -->
         <div class="skills-icons">
-          <div class="icon html" title="HTML5">
+          <div class="icon html" data-tooltip="HTML5">
             <i class="fab fa-html5"></i>
           </div>
-          <div class="icon css" title="CSS3">
+          <div class="icon css" data-tooltip="CSS3">
             <i class="fab fa-css3-alt"></i>
           </div>
-          <div class="icon js" title="JavaScript (ES6+)">
+          <div class="icon js" data-tooltip="JavaScript (ES6+)">
             <i class="fab fa-js"></i>
           </div>
-          <div class="icon python" title="Python">
+          <div class="icon python" data-tooltip="Python">
             <i class="fab fa-python"></i>
           </div>
-          <div class="icon db" title="Databases">
+          <div class="icon db" data-tooltip="Databases">
             <i class="fas fa-database"></i>
           </div>
-          <div class="icon bootstrap" title="Bootstrap 5">
+          <div class="icon bootstrap" data-tooltip="Bootstrap 5">
             <i class="fab fa-bootstrap"></i>
           </div>
-          <div class="icon flask" title="Flask">
+          <div class="icon flask" data-tooltip="Flask">
             <i class="fas fa-leaf"></i>
           </div>
-          <div class="icon django" title="Django">
+          <div class="icon django" data-tooltip="Django">
             <i class="fas fa-cubes"></i>
           </div>
         </div>
