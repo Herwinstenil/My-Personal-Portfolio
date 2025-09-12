@@ -569,45 +569,59 @@
       font-weight: bold;
     }
 
-    .featured-projects .project-card {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      align-items: center;
-      gap: 2rem;
-      margin-bottom: 6rem;
+    .featured-projects {
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    .featured-projects .project-card:nth-child(even) {
-      direction: rtl;
+    .section-title {
+      font-size: 2.5rem;
+      color: #ccd6f6;
+      margin-bottom: 4rem;
+      text-align: left;
     }
 
-    .featured-projects .project-card:nth-child(even) * {
-      direction: ltr;
+    .project-card {
+      position: relative;
+      margin-bottom: 8rem;
     }
 
     .project-image {
-      grid-column: 1/8;
+      width: 60%;
       position: relative;
     }
 
-    .featured-projects .project-card:nth-child(even) .project-image {
-      grid-column: 6/13;
+    .project-card:nth-child(even) .project-image {
+      margin-left: auto;
     }
 
     .project-image img {
       width: 100%;
+      height: 400px;
+      object-fit: cover;
       border-radius: 4px;
-      transition: 0.3s;
+      transition: all 0.3s ease;
+    }
+
+    .project-image:hover img {
+      filter: grayscale(0%) brightness(1);
     }
 
     .project-content {
-      grid-column: 7/13;
-      text-align: right;
-      z-index: 2;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50%;
+      z-index: 10;
     }
 
-    .featured-projects .project-card:nth-child(even) .project-content {
-      grid-column: 1/7;
+    .project-card:nth-child(odd) .project-content {
+      right: 0;
+      text-align: right;
+    }
+
+    .project-card:nth-child(even) .project-content {
+      left: 0;
       text-align: left;
     }
 
@@ -618,9 +632,11 @@
       margin-bottom: 0.5rem;
     }
 
-    .featured-projects .project-title {
+    .project-title {
       font-size: 1.8rem;
+      color: #ccd6f6;
       margin-bottom: 1.5rem;
+      font-weight: 600;
     }
 
     .project-description-box {
@@ -628,23 +644,28 @@
       padding: 1.5rem;
       border-radius: 4px;
       margin-bottom: 1.5rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
 
     .project-description-box p {
       color: #8892b0;
       margin: 0;
+      line-height: 1.6;
     }
 
-    .featured-projects .project-tech {
+    .project-tech {
       display: flex;
       flex-wrap: wrap;
-      justify-content: flex-end;
       gap: 1rem;
       margin-bottom: 1rem;
       list-style: none;
     }
 
-    .featured-projects .project-card:nth-child(even) .project-tech {
+    .project-card:nth-child(odd) .project-tech {
+      justify-content: flex-end;
+    }
+
+    .project-card:nth-child(even) .project-tech {
       justify-content: flex-start;
     }
 
@@ -654,57 +675,29 @@
       color: #00bfff;
     }
 
-    .featured-projects .project-links {
+    .project-links {
       display: flex;
-      justify-content: flex-end;
       gap: 1rem;
     }
 
-    .featured-projects .project-card:nth-child(even) .project-links {
+    .project-card:nth-child(odd) .project-links {
+      justify-content: flex-end;
+    }
+
+    .project-card:nth-child(even) .project-links {
       justify-content: flex-start;
     }
 
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
+    .project-links a {
+      color: #ccd6f6;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
     }
 
-    .project-card {
-      background: #112240;
-      padding: 2rem 1.5rem;
-      border-radius: 4px;
-      transition: 0.3s;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .project-card:hover {
-      transform: translateY(-7px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    }
-
-    .project-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 2rem;
-    }
-
-    .project-icon {
+    .project-links a:hover {
       color: #00bfff;
-      font-size: 2rem;
-    }
-
-    .project-title {
-      font-size: 1.3rem;
-      margin-bottom: 1rem;
-    }
-
-    .project-description {
-      color: #8892b0;
-      margin-bottom: 2rem;
-      flex-grow: 1;
+      transform: translateY(-2px);
     }
 
     .other-projects .project-tech {
@@ -1017,10 +1010,10 @@
 
   <!-- Projects Section -->
   <section id="projects" class="section">
-    <h2 class="section-title">Projects I've Worked On</h2>
-
-    <!-- Featured Projects -->
     <div class="featured-projects">
+      <h2 class="section-title">Projects I've Worked On</h2>
+
+      <!-- Featured Projects -->
       <div class="project-card">
         <div class="project-image">
           <img src="{% static 'Canteen.png' %}" alt="Roriri Smart Canteen System">
@@ -1029,11 +1022,10 @@
           <p class="project-overline">Featured Project</p>
           <h3 class="project-title">Roriri Smart Canteen System</h3>
           <div class="project-description-box">
-            <p> Built a Smart Canteen Management System to streamline employee food ordering and billing.
-              Implemented a QR-based authentication system, generating unique QR codes for employees upon registration.
-              Developed a responsive platform for menu browsing, order placement, and an admin dashboard for menu and
-              order management.
-            </p>
+            <p>Built a Smart Canteen Management System to streamline employee food ordering and billing. Implemented a
+              QR-based authentication system, generating unique QR codes for employees upon registration. Developed a
+              responsive platform for menu browsing, order placement, and an admin dashboard for menu and order
+              management.</p>
           </div>
           <ul class="project-tech">
             <li>Python</li>
@@ -1049,17 +1041,16 @@
 
       <div class="project-card">
         <div class="project-image">
-          <img src="{% static 'Volleyball.png' %}" alt="Volleyball Tournament Management System">
+          <img src="{% static 'Volleyball.png' %}" alt="Volleyball Tournament">
         </div>
         <div class="project-content">
           <p class="project-overline">Featured Project</p>
           <h3 class="project-title">Volleyball Tournament Management System</h3>
           <div class="project-description-box">
-            <p> Developed a responsive platform for managing tournament fixtures, brackets, and schedules
-              with dynamic layout adjustments for all screen sizes.
-              Integrated an image/video gallery, contact section, and Google Maps API for venue location.
-              Added features to view live scores in a stadium-style display and display
-              all team matches in a list mode, creating an engaging real-time tournament experience.</p>
+            <p>Developed a responsive platform for managing tournament fixtures, brackets, and schedules with dynamic
+              layout adjustments for all screen sizes. Integrated an image/video gallery, contact section, and Google
+              Maps API for venue location. Added features to view live scores in a stadium-style display and display all
+              team matches in a list mode, creating an engaging real-time tournament experience.</p>
           </div>
           <ul class="project-tech">
             <li>Python</li>
@@ -1073,15 +1064,16 @@
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Other Projects -->
-    <div class="other-projects">
-      <h3 style="font-size: 1.5rem; color: #ccd6f6; margin-bottom: 2rem; text-align: center;">My Projects</h3>
-      <div class="projects-grid">
-        <!-- project cards omitted here for brevity (kept above in original) -->
-        <!-- ... -->
-      </div>
+  <!-- Other Projects -->
+  <div class="other-projects">
+    <h3 style="font-size: 1.5rem; color: #ccd6f6; margin-bottom: 2rem; text-align: center;">My Projects</h3>
+    <div class="projects-grid">
+      <!-- project cards omitted here for brevity (kept above in original) -->
+      <!-- ... -->
     </div>
+  </div>
   </section>
 
   <!-- Contact Section -->
