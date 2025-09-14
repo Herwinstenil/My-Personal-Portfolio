@@ -589,6 +589,10 @@
     .project-image {
       width: 60%;
       position: relative;
+      overflow: hidden;
+      /* keeps zoomed image inside */
+      border-radius: 4px;
+      /* matches image rounding */
     }
 
     .project-card:nth-child(even) .project-image {
@@ -600,7 +604,12 @@
       height: 350px;
       object-fit: cover;
       border-radius: 4px;
-      transition: all 0.3s ease;
+      transition: transform 0.4s ease;
+    }
+
+    .project-image img:hover {
+      transform: scale(1.05);
+      /* zoom in slightly */
     }
 
     .project-content {
@@ -637,9 +646,9 @@
 
     .project-description-box {
       background: #112240;
-      padding: 1.25rem; 
+      padding: 1.25rem;
       border-radius: 4px;
-      margin-bottom: 0.75rem; 
+      margin-bottom: 0.75rem;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
 
