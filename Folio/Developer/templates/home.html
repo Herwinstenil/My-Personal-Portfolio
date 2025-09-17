@@ -686,101 +686,104 @@
       color: #00bfff;
     }
 
-    /* Other Projects */
-    .other-projects {
-      margin-top: 4rem;
-    }
+   /* Other Projects */
+.other-projects {
+  margin-top: 4rem;
+}
 
-    .other-projects-title {
-      font-size: 1.5rem;
-      color: #ccd6f6;
-      margin-bottom: 2rem;
-      text-align: center;
-    }
+.other-projects-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #ccd6f6;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
 
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 2rem;
-      justify-content: center;
-    }
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
+}
 
-    .project-box {
-      background: #19223a;
-      border-radius: 12px;
-      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.2s, box-shadow 0.2s;
-      min-height: 380px;
-    }
+.project-box {
+  background: #0f172a;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
 
-    .project-box:hover {
-      transform: translateY(-8px) scale(1.03);
-      box-shadow: 0 8px 32px rgba(0, 204, 255, 0.15);
-    }
+.project-box:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 8px 28px rgba(0, 204, 255, 0.25);
+}
 
-    .project-img img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      display: block;
-    }
+.project-img img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
 
-    .project-info {
-      padding: 1.2rem 1.2rem 1rem 1.2rem;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
+.project-info {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1;
+}
 
-    .project-meta {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 0.95rem;
-      margin-bottom: 0.7rem;
-      color: #00bfff;
-    }
+.project-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  flex-wrap: wrap;
+}
 
-    .project-tech {
-      font-family: "Courier New", monospace;
-      color: #00bfff;
-      font-size: 0.85rem;
-    }
+.project-tech {
+  color: #38bdf8;
+  font-size: 0.9rem;
+  font-family: "Courier New", monospace;
+}
 
-    .project-year {
-      color: #8892b0;
-      font-size: 0.85rem;
-      margin-left: 1rem;
-    }
+.project-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
 
-    .project-link {
-      color: #8892b0;
-      margin-left: 1rem;
-      font-size: 1.1rem;
-      transition: color 0.3s;
-    }
+.project-year {
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
 
-    .project-link:hover {
-      color: #00bfff;
-    }
+.project-link {
+  color: #94a3b8;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
 
-    .project-title {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #ccd6f6;
-      margin-bottom: 0.5rem;
-      margin-top: 0.2rem;
-    }
+.project-link:hover {
+  color: #38bdf8;
+}
 
-    .project-desc {
-      color: #8892b0;
-      font-size: 0.95rem;
-      margin-bottom: 0.2rem;
-      flex: 1;
-    }
+.project-title {
+  font-size: 0.90rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  font-family: "Courier New", monospace;
+}
+
+.project-desc {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
 
     .contact-section {
       text-align: center;
@@ -1141,106 +1144,85 @@
   </section>
 
   <!-- Other Projects -->
-  <section>
-    <div class="other-projects">
-      <h3 class="other-projects-title">My Projects</h3>
-      <div class="projects-grid">
-        <!-- Project Card Example -->
-        <div class="project-box">
-          <div class="project-img">
-            <img src="{% static 'hospital.png' %}" alt="Hospital Appointment Booking System">
-          </div>
-          <div class="project-info">
-            <div class="project-meta">
-              <span class="project-tech">Python | Django | SQLite | Twilio API</span>
-              <span class="project-year"><i class="fa-regular fa-calendar"></i> 2024</span>
-              <a href="https://github.com/Herwinstenil/Hospital-Appointment-Booking.git" target="_blank"
-                class="project-link"><i class="fab fa-github"></i></a>
-            </div>
-            <div class="project-title">Hospital Appointment Booking System</div>
-            <div class="project-desc">
-              Book, cancel, and reschedule appointments online. Admin panel for doctors and staff.
-            </div>
-          </div>
-        </div>
+<section class="other-projects">
+  <h3 class="other-projects-title">My Projects</h3>
+  <div class="projects-grid">
 
-        <!-- Project Box 2 -->
-        <div class="project-box">
-          <div class="project-img">
-            <img src="{% static 'quiz.png' %}" alt="Online Quiz System">
-          </div>
-          <div class="project-info">
-            <div class="project-meta">
-              <span class="project-tech">Python | Django | REST API | SQLite</span>
-              <span class="project-year"><i class="fa-regular fa-calendar"></i> 2024</span>
-              <a href="https://github.com/Herwinstenil/Quiz-Exam.git" target="_blank" class="project-link"><i
-                  class="fab fa-github"></i></a>
-            </div>
-            <div class="project-title">Online Quiz System</div>
-            <div class="project-desc">
-              Interactive quiz platform with scoring, leaderboard, and user login.
-            </div>
+    <!-- Project Card -->
+    <div class="project-box">
+      <div class="project-img">
+        <img src="{% static 'hospital.png' %}" alt="Hospital Appointment Booking System">
+      </div>
+      <div class="project-info">
+        <div class="project-meta">
+          <span class="project-tech">Python | Django | SQLite | Twilio API</span>
+          <div class="project-icons">
+            <span class="project-year"><i class="fa-regular fa-calendar"></i> 2024</span>
+            <a href="https://github.com/Herwinstenil/Hospital-Appointment-Booking.git" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
           </div>
         </div>
-
-        <!-- Project Box 3 -->
-        <div class="project-box">
-          <div class="project-img">
-            <img src="{% static 'Fehato.jpg' %}" alt="E-Commerce Website for Aquatic Fishes">
-          </div>
-          <div class="project-info">
-            <div class="project-meta">
-              <span class="project-tech">Python | Django | REST API | SQLite</span>
-              <span class="project-year"><i class="fa-regular fa-calendar"></i> 2024</span>
-              <a href="https://github.com/Herwinstenil/Aqua-E-commerce.git" target="_blank" class="project-link"><i
-                  class="fab fa-github"></i></a>
-            </div>
-            <div class="project-title">E-Commerce Website for Aquatic Fishes</div>
-            <div class="project-desc">
-              E-commerce platform for aquarium fishes with product catalog, cart, order management, and secure checkout.
-            </div>
-          </div>
-        </div>
-
-        <!-- Project Box 4 -->
-        <div class="project-box">
-          <div class="project-img">
-            <img src="{% static 'Crop.png' %}" alt="E-Bidding Website for Agricultural Crops">
-          </div>
-          <div class="project-info">
-            <div class="project-meta">
-              <span class="project-tech">Python | JavaScript | REST API </span>
-              <span class="project-year"><i class="fa-regular fa-calendar"></i> 2024</span>
-              <a href="https://github.com/Herwinstenil/Aqua-E-commerce.git" target="_blank" class="project-link"><i
-                  class="fab fa-github"></i></a>
-            </div>
-            <div class="project-title">E-Bidding Website for Agricultural Crops</div>
-            <div class="project-desc">
-              Crop Bidding Platform with Auctions & Transactions.
-            </div>
-          </div>
-        </div>
-
-        <!-- Project Box 5 -->
-        <div class="project-card">
-          <h4 class="project-title">XML Tree Proof</h4>
-          <p class="project-desc">
-            A proofing and comparison tool for XML documents. Highlights differences, supports merging, and provides a
-            user-friendly interface for editors.
-          </p>
-          <ul class="project-tech">
-            <li>Python</li>
-            <li>Flask</li>
-            <li>MongoDB</li>
-            <li>JavaScript</li>
-          </ul>
-          <div class="project-links">
-            <a href="https://github.com/herwinstenil/xml-tree-proof" target="_blank"><i class="fab fa-github"></i></a>
-          </div>
-        </div>
+        <h4 class="project-title">Hospital Appointment Booking System</h4>
+        <p class="project-desc">Book, cancel, and reschedule appointments online. Admin panel for doctors and staff.</p>
       </div>
     </div>
-  </section>
+
+    <!-- Project Card -->
+    <div class="project-box">
+      <div class="project-img">
+        <img src="{% static 'quiz.png' %}" alt="Online Quiz System">
+      </div>
+      <div class="project-info">
+        <div class="project-meta">
+          <span class="project-tech">Python | Django | REST API | SQLite</span>
+          <div class="project-icons">
+            <span class="project-year"><i class="fa-regular fa-calendar"></i> 2024</span>
+            <a href="https://github.com/Herwinstenil/Quiz-Exam.git" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <h4 class="project-title">Online Quiz System</h4>
+        <p class="project-desc">Interactive quiz platform with scoring, leaderboard, and user login.</p>
+      </div>
+    </div>
+
+    <!-- Project Card -->
+    <div class="project-box">
+      <div class="project-img">
+        <img src="{% static 'Fehato.jpg' %}" alt="E-Commerce Website for Aquatic Fishes">
+      </div>
+      <div class="project-info">
+        <div class="project-meta">
+          <span class="project-tech">Python | Django | REST API | SQLite</span>
+          <div class="project-icons">
+            <span class="project-year"><i class="fa-regular fa-calendar"></i> 2024</span>
+            <a href="https://github.com/Herwinstenil/Aqua-E-commerce.git" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <h4 class="project-title">E-Commerce Website for Aquatic Fishes</h4>
+        <p class="project-desc">E-commerce platform for aquarium fishes with product catalog, cart, order management, and secure checkout.</p>
+      </div>
+    </div>
+
+    <!-- Project Card -->
+    <div class="project-box">
+      <div class="project-img">
+        <img src="{% static 'Crop.png' %}" alt="E-Bidding Website for Agricultural Crops">
+      </div>
+      <div class="project-info">
+        <div class="project-meta">
+          <span class="project-tech">Python | JavaScript | REST API</span>
+          <div class="project-icons">
+            <span class="project-year"><i class="fa-regular fa-calendar"></i> 2024</span>
+            <a href="https://github.com/Herwinstenil/Aqua-E-commerce.git" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <h4 class="project-title">E-Bidding Website for Agricultural Crops</h4>
+        <p class="project-desc">Crop bidding platform with auctions & transactions.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
   <!-- Contact Section -->
   <section id="contact" class="contact-section">
