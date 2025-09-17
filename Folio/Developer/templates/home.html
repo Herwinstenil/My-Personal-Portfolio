@@ -733,6 +733,7 @@
       display: flex;
       flex-direction: column;
       flex: 1;
+      position: relative;
     }
 
     .project-meta {
@@ -752,7 +753,9 @@
 
     .project-icons {
       display: flex;
-      align-items: center;
+      justify-content: flex-end; /* Align icons to right */
+  margin-top: auto; /* Push to bottom after desc */
+  gap: 0.5rem;
     }
 
     .project-link {
@@ -1171,7 +1174,8 @@
             <span class="project-tech">Python | Django | REST API | SQLite</span>
           </div>
           <h4 class="project-title">Online Quiz System</h4>
-          <p class="project-desc">Interactive quiz platform with scoring, leaderboard, and user login.</p>
+          <p class="project-desc"> Interactive quiz platform with user login, scoring, and leaderboard features. 
+  Admin can review the scores of all participants on a dedicated admin page.</p>
           <div class="project-icons">
             <a href="https://github.com/Herwinstenil/Quiz-Exam.git" target="_blank" class="project-link"><i
                 class="fab fa-github"></i></a>
