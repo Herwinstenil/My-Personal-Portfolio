@@ -700,10 +700,13 @@
     }
 
     .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 2rem;
-    }
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* exactly 3 per row */
+  gap: 1.5rem;
+  justify-content: center;  /* center the whole grid */
+  max-width: 1000px;  /* limit grid width */
+  margin: 0 auto;     /* center in page */
+}
 
     .project-box {
       background: #0f172a;
@@ -721,10 +724,9 @@
     }
 
     .project-img img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      display: block;
+ width: 100%;
+  height: 160px;  /* smaller image */
+  object-fit: cover;
     }
 
     .project-info {
@@ -778,7 +780,6 @@
       font-size: 0.95rem;
       line-height: 1.5;
     }
-
 
     .contact-section {
       text-align: center;
