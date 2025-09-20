@@ -791,13 +791,13 @@
       margin: 0.2rem 0;
     }
 
-    /* Hide all project cards by default except those with .visible */
-.project-box {
-  display: none;
-}
-.project-box.visible {
-  display: flex;
-}
+    .project-box {
+      display: none;
+    }
+
+    .project-box.visible {
+      display: flex;
+    }
 
     /* Contact Section */
     .contact-section {
@@ -868,6 +868,7 @@
     /* Responsive Styles */
     /* Large screens (desktops/laptops) */
     @media (max-width: 1200px) {
+
       .section,
       .featured-projects {
         max-width: 900px;
@@ -881,6 +882,7 @@
 
     /* Tablets */
     @media (max-width: 900px) {
+
       .section,
       .featured-projects {
         max-width: 100%;
@@ -1464,8 +1466,8 @@
       </div>
     </div>
     <div style="text-align:center; margin-top:2rem;">
-  <button id="show-more-btn" class="resume-btn">Show More</button>
-</div>
+      <button id="show-more-btn" class="resume-btn">Show More</button>
+    </div>
   </section>
 
   <!-- Contact Section -->
@@ -1528,36 +1530,36 @@
     });
 
     // Show More functionality for Other Projects
-  document.addEventListener("DOMContentLoaded", function () {
-    const projects = document.querySelectorAll("#other-projects-grid .project-box");
-    const showMoreBtn = document.getElementById("show-more-btn");
-    let showingAll = false;
+    document.addEventListener("DOMContentLoaded", function () {
+      const projects = document.querySelectorAll("#other-projects-grid .project-box");
+      const showMoreBtn = document.getElementById("show-more-btn");
+      let showingAll = false;
 
-    // Show only first 3 projects initially
-    projects.forEach((card, idx) => {
-      if (idx < 3) {
-        card.classList.add("visible");
-      }
-    });
+      // Show only first 3 projects initially
+      projects.forEach((card, idx) => {
+        if (idx < 3) {
+          card.classList.add("visible");
+        }
+      });
 
-     showMoreBtn.addEventListener("click", function () {
-      if (!showingAll) {
-        projects.forEach(card => card.classList.add("visible"));
-        showMoreBtn.textContent = "Show Less";
-        showingAll = true;
-      } else {
-        projects.forEach((card, idx) => {
-          if (idx < 3) {
-            card.classList.add("visible");
-          } else {
-            card.classList.remove("visible");
-          }
-        });
-        showMoreBtn.textContent = "Show More";
-        showingAll = false;
-      }
+      showMoreBtn.addEventListener("click", function () {
+        if (!showingAll) {
+          projects.forEach(card => card.classList.add("visible"));
+          showMoreBtn.textContent = "Show Less";
+          showingAll = true;
+        } else {
+          projects.forEach((card, idx) => {
+            if (idx < 3) {
+              card.classList.add("visible");
+            } else {
+              card.classList.remove("visible");
+            }
+          });
+          showMoreBtn.textContent = "Show More";
+          showingAll = false;
+        }
+      });
     });
-  });
   </script>
 </body>
 
