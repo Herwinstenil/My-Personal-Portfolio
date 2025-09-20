@@ -723,11 +723,38 @@
       transition: transform 0.25s ease, box-shadow 0.25s ease;
       display: flex;
       flex-direction: column;
+      margin-bottom: 1.5rem;
+      
+      /* Initial state for hidden projects */
+      opacity: 0;
+      transform: translateY(30px) scale(0.95);
+      height: 0;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+     .project-box.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      height: auto;
+      min-height: 320px;
+    }
+
+    .project-box.hiding {
+      opacity: 0;
+      transform: translateY(-20px) scale(0.95);
+      height: 0;
+      margin-bottom: 0;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .project-box:hover {
       transform: translateY(-8px) scale(1.02);
       box-shadow: 0 8px 28px rgba(0, 204, 255, 0.25);
+    }
+
+    .project-box.visible:hover {
+      transform: translateY(-8px) scale(1.02);
     }
 
     .project-img img {
@@ -791,14 +818,6 @@
       margin: 0.2rem 0;
     }
 
-    .project-box {
-      display: none;
-    }
-
-    .project-box.visible {
-      display: flex;
-    }
-
     .show-more-btn {
       padding: 0.6rem 1.4rem;
       font-size: 1rem;
@@ -807,7 +826,7 @@
       background: transparent;
       color: #00bfff;
       cursor: pointer;
-      transition: background 0.3s, color 0.3s;
+      transition: background 0.3s, color 0.3s, transform 0.2s;
       margin: 0 auto;
       display: inline-block;
       font-family: "Courier New", monospace;
@@ -815,6 +834,7 @@
 
     .show-more-btn:hover {
       background: rgba(100, 255, 218, 0.1);
+      transform: translateY(-2px);
     }
 
     /* Contact Section */
@@ -1490,6 +1510,50 @@
           </div>
         </div>
       </div>
+
+      <!-- Project Card 5 (Hidden initially) -->
+      <div class="project-box">
+        <div class="project-img">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=160&fit=crop" alt="Data Analytics Dashboard">
+        </div>
+        <div class="project-info">
+          <div class="project-meta">
+            <span class="project-tech">Python | Flask | Chart.js | MongoDB</span>
+          </div>
+          <div class="project-row">
+            <h4 class="project-title">Data Analytics Dashboard</h4>
+          </div>
+          <div class="project-row project-desc-row">
+            <p class="project-desc">Interactive dashboard for data visualization with real-time charts, graphs, and
+              analytics for business intelligence.</p>
+            <div class="project-icons">
+              <a href="#" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card 6 (Hidden initially) -->
+      <div class="project-box">
+        <div class="project-img">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=160&fit=crop" alt="Task Management App">
+        </div>
+        <div class="project-info">
+          <div class="project-meta">
+            <span class="project-tech">Python | Django | Bootstrap | SQLite</span>
+          </div>
+          <div class="project-row">
+            <h4 class="project-title">Task Management Application</h4>
+          </div>
+          <div class="project-row project-desc-row">
+            <p class="project-desc">Collaborative task management platform with project tracking, team collaboration,
+              and deadline management features.</p>
+            <div class="project-icons">
+              <a href="#" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div style="text-align:center; margin-top:2rem;">
       <button id="show-more-btn" class="show-more-btn">Show More</button>
@@ -1514,6 +1578,7 @@
   </footer>
 
   <script>
+    // Tab functionality
     const tabButtons = document.querySelectorAll(".tab-button"),
       tabContents = document.querySelectorAll(".tab-content");
     tabButtons.forEach((b) => {
@@ -1525,6 +1590,8 @@
         document.getElementById(t).classList.add("active");
       });
     });
+
+    // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach((a) => {
       a.addEventListener("click", function (e) {
         e.preventDefault();
@@ -1534,6 +1601,8 @@
         }
       });
     });
+
+    // Scroll animations
     const observer = new IntersectionObserver(
       (e) => {
         e.forEach((en) => {
@@ -1549,13 +1618,15 @@
       s.classList.add("animate-hidden");
       observer.observe(s);
     });
+
+    // Cursor light effect
     const cursorLight = document.querySelector(".cursor-light");
     document.addEventListener("mousemove", (e) => {
       cursorLight.style.left = e.clientX + "px";
       cursorLight.style.top = e.clientY + "px";
     });
 
-    // Show More functionality for Other Projects
+     // Enhanced Show More functionality with smooth animations
     document.addEventListener("DOMContentLoaded", function () {
       const projects = document.querySelectorAll("#other-projects-grid .project-box");
       const showMoreBtn = document.getElementById("show-more-btn");
@@ -1565,24 +1636,47 @@
       projects.forEach((card, idx) => {
         if (idx < 3) {
           card.classList.add("visible");
+          // Add a small delay for staggered animation effect
+          setTimeout(() => {
+            card.classList.add("animating-in");
+          }, idx * 100);
         }
       });
 
       showMoreBtn.addEventListener("click", function () {
         if (!showingAll) {
-          projects.forEach(card => card.classList.add("visible"));
+          // Show remaining projects with staggered animation
+          projects.forEach((card, idx) => {
+            if (idx >= 3) {
+              setTimeout(() => {
+                card.classList.add("visible", "animating-in");
+              }, (idx - 3) * 150); // Staggered delay
+            }
+          });
+          
           showMoreBtn.textContent = "Show Less";
           showingAll = true;
         } else {
+          // Hide extra projects with animation
           projects.forEach((card, idx) => {
-            if (idx < 3) {
-              card.classList.add("visible");
-            } else {
-              card.classList.remove("visible");
+            if (idx >= 3) {
+              card.classList.add("animating-out");
+              setTimeout(() => {
+                card.classList.remove("visible", "animating-in", "animating-out");
+              }, 500); // Match animation duration
             }
           });
+          
           showMoreBtn.textContent = "Show More";
           showingAll = false;
+          
+          // Smooth scroll to projects section
+          setTimeout(() => {
+            document.querySelector(".other-projects").scrollIntoView({
+              behavior: "smooth",
+              block: "start"
+            });
+          }, 300);
         }
       });
     });
