@@ -871,7 +871,141 @@
   }
 }
 
+/* Tablets */
+@media (max-width: 900px) {
+  .section,
+  .featured-projects {
+    max-width: 100%;
+    padding: 60px 1rem;
+  }
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .about-image {
+    margin: 0 auto;
+  }
+  .skills-visual {
+    flex-direction: column;
+    gap: 2rem;
+  }
+   .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+    gap: 1rem;
+  }
+  .project-image img {
+    height: 220px;
+  }
+  .project-content {
+    position: static;
+    transform: none;
+    width: 100%;
+    text-align: left !important;
+    margin-top: 1rem;
+  }
+  .project-card {
+    margin-bottom: 4rem;
+  }
+}
 
+
+/* Mobiles */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0.7rem 1rem;
+  }
+  .nav-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .nav-links {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+  .hero {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    min-height: 70vh;
+  }
+  .hero-content {
+    padding: 60px 0.5rem;
+  }
+  .section {
+    padding: 40px 0.5rem;
+  }
+  .section-title {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+  }
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .about-image {
+    max-width: 220px;
+  }
+  .skills-visual {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .skills-illustration iframe {
+    max-width: 220px;
+    height: 220px;
+  }
+   .skills-heading {
+    font-size: 1.2rem;
+  }
+  .skills-icons .icon {
+    width: 38px;
+    height: 38px;
+    font-size: 1.2rem;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    max-width: 100%;
+  }
+  .project-img img {
+    height: 120px;
+  }
+  .project-title {
+    font-size: 0.95rem;
+  }
+  .project-desc {
+    font-size: 0.85rem;
+  }
+  .project-card {
+    margin-bottom: 2rem;
+  }
+  .project-image img {
+    height: 140px;
+  }
+  .project-description-box {
+    padding: 0.7rem;
+    font-size: 0.8rem;
+  }
+  .project-tech {
+    gap: 0.5rem;
+    font-size: 0.7rem;
+  }
+  .contact-section {
+    padding: 40px 0.5rem;
+  }
+  .contact-title {
+    font-size: 1.5rem;
+  }
+  .footer {
+    padding: 1rem;
+    font-size: 0.75rem;
+  }
+  .social-links,
+  .email-side {
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+  }
+}
   </style>
 </head>
 
