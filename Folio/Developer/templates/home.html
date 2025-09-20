@@ -1518,6 +1518,38 @@
       cursorLight.style.left = e.clientX + "px";
       cursorLight.style.top = e.clientY + "px";
     });
+
+    // Show More functionality for Other Projects
+  document.addEventListener("DOMContentLoaded", function () {
+    const projects = document.querySelectorAll("#other-projects-grid .project-box");
+    const showMoreBtn = document.getElementById("show-more-btn");
+    let showingAll = false;
+
+    // Show only first 3 projects initially
+    projects.forEach((card, idx) => {
+      if (idx < 3) {
+        card.classList.add("visible");
+      }
+    });
+
+     showMoreBtn.addEventListener("click", function () {
+      if (!showingAll) {
+        projects.forEach(card => card.classList.add("visible"));
+        showMoreBtn.textContent = "Show Less";
+        showingAll = true;
+      } else {
+        projects.forEach((card, idx) => {
+          if (idx < 3) {
+            card.classList.add("visible");
+          } else {
+            card.classList.remove("visible");
+          }
+        });
+        showMoreBtn.textContent = "Show More";
+        showingAll = false;
+      }
+    });
+  });
   </script>
 </body>
 
