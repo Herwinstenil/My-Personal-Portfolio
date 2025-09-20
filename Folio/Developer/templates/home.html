@@ -791,6 +791,14 @@
       margin: 0.2rem 0;
     }
 
+    /* Hide all project cards by default except those with .visible */
+.project-box {
+  display: none;
+}
+.project-box.visible {
+  display: flex;
+}
+
     /* Contact Section */
     .contact-section {
       text-align: center;
