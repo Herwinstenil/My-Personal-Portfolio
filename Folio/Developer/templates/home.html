@@ -724,8 +724,6 @@
       display: flex;
       flex-direction: column;
       margin-bottom: 1.5rem;
-      
-      /* Initial state for hidden projects */
       opacity: 0;
       transform: translateY(30px) scale(0.95);
       height: 0;
@@ -1626,7 +1624,7 @@
       cursorLight.style.top = e.clientY + "px";
     });
 
-     // Enhanced Show More functionality with smooth animations
+   // Enhanced Show More functionality with smooth animations
     document.addEventListener("DOMContentLoaded", function () {
       const projects = document.querySelectorAll("#other-projects-grid .project-box");
       const showMoreBtn = document.getElementById("show-more-btn");
