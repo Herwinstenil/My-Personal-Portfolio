@@ -731,7 +731,7 @@
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-     .project-box.visible {
+    .project-box.visible {
       opacity: 1;
       transform: translateY(0) scale(1);
       height: auto;
@@ -1512,7 +1512,8 @@
       <!-- Project Card 5 (Hidden initially) -->
       <div class="project-box">
         <div class="project-img">
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=160&fit=crop" alt="Data Analytics Dashboard">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=160&fit=crop"
+            alt="Data Analytics Dashboard">
         </div>
         <div class="project-info">
           <div class="project-meta">
@@ -1534,7 +1535,8 @@
       <!-- Project Card 6 (Hidden initially) -->
       <div class="project-box">
         <div class="project-img">
-          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=160&fit=crop" alt="Task Management App">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=160&fit=crop"
+            alt="Task Management App">
         </div>
         <div class="project-info">
           <div class="project-meta">
@@ -1624,7 +1626,7 @@
       cursorLight.style.top = e.clientY + "px";
     });
 
-   // Enhanced Show More functionality with smooth animations
+    // Enhanced Show More functionality with smooth animations
     document.addEventListener("DOMContentLoaded", function () {
       const projects = document.querySelectorAll("#other-projects-grid .project-box");
       const showMoreBtn = document.getElementById("show-more-btn");
@@ -1651,7 +1653,7 @@
               }, (idx - 3) * 150); // Staggered delay
             }
           });
-          
+
           showMoreBtn.textContent = "Show Less";
           showingAll = true;
         } else {
@@ -1664,10 +1666,10 @@
               }, 500); // Match animation duration
             }
           });
-          
+
           showMoreBtn.textContent = "Show More";
           showingAll = false;
-          
+
           // Smooth scroll to projects section
           setTimeout(() => {
             document.querySelector(".other-projects").scrollIntoView({
