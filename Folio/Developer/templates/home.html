@@ -1697,6 +1697,35 @@
       }
     }
 
+     /* iPhone specific adjustments */
+    @media screen and (max-width: 414px) {
+      .hero-title {
+        font-size: clamp(1.6rem, 12vw, 2.5rem);
+      }
+
+      .hero-subtitle-2 {
+        font-size: clamp(1.2rem, 10vw, 1.8rem);
+      }
+
+      .skills-illustration iframe {
+        max-width: 220px;
+        height: 220px;
+      }
+
+      .skills-icons .icon {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+      }
+
+      .project-image img {
+        height: 180px;
+      }
+
+      .contact-title {
+        font-size: 1.6rem;
+      }
+    }
 
   </style>
 </head>
