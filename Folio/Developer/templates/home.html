@@ -1499,6 +1499,14 @@
       cursorLight.style.top = e.clientY + "px";
     });
 
+    // Mobile menu toggle
+const mobileBtn = document.querySelector(".mobile-menu-btn");
+const navLinks = document.querySelector(".nav-links");
+
+mobileBtn.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
+
     // Enhanced Show More functionality with smooth animations
     document.addEventListener("DOMContentLoaded", function () {
       const projects = document.querySelectorAll("#other-projects-grid .project-box");
