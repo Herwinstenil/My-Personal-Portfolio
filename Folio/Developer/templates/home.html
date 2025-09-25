@@ -9,6 +9,7 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  {% load static %}
   <style>
     * {
       margin: 0;
@@ -48,7 +49,7 @@
       width: 100%;
       padding: 1rem 2rem;
       z-index: 1000;
-      background: rgba(17, 34, 64, 0.9);
+      background: transparent;
       backdrop-filter: blur(10px);
     }
 
@@ -1198,7 +1199,7 @@
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a href="#" target="_blank" class="resume-btn">Resume</a></li>
+        <li><a href="{% static 'Herwin Resume.pdf' %}" target="_blank" class="resume-btn">Resume</a></li>
       </ul>
     </div>
   </nav>
@@ -1283,7 +1284,7 @@
         </p>
       </div>
       <div class="about-image">
-        <img src="https://via.placeholder.com/300x400/112240/00bfff?text=Herwin+Stenil" alt="Herwin Stenil"
+        <img src="{% static '98974a.jpg' %}" alt="Herwin Stenil"
           class="profile-img" />
       </div>
     </div>
@@ -1435,7 +1436,7 @@
       <!-- Featured Project 1 -->
       <div class="project-card">
         <div class="project-image">
-          <img src="https://via.placeholder.com/600x350/1a1f35/00bfff?text=Smart+Canteen"
+          <img src="{% static 'Canteen.png' %}"
             alt="Roriri Smart Canteen System">
         </div>
         <div class="project-content">
@@ -1466,7 +1467,7 @@
       <!-- Featured Project 2 -->
       <div class="project-card">
         <div class="project-image">
-          <img src="https://via.placeholder.com/600x350/1a1f35/00bfff?text=Volleyball+Tournament"
+          <img src="{% static 'Volleyball.png' %}"
             alt="Volleyball Tournament">
         </div>
         <div class="project-content">
@@ -1496,7 +1497,7 @@
       <!-- Featured Project 3 -->
       <div class="project-card">
         <div class="project-image">
-          <img src="https://via.placeholder.com/600x350/1a1f35/00bfff?text=XML+Proofing+Tool"
+          <img src="{% static 'XML.png' %}"
             alt="Automated XML Proofing Tool">
         </div>
         <div class="project-content">
@@ -1534,7 +1535,7 @@
       <!-- Project Card 1 -->
       <div class="project-box">
         <div class="project-img">
-          <img src="https://via.placeholder.com/400x160/1a1f35/00bfff?text=Hospital+Appointment"
+          <img src="{% static 'Hospital.png' %}"
             alt="Hospital Appointment Booking System">
         </div>
         <div class="project-info">
@@ -1558,7 +1559,7 @@
       <!-- Project Card 2 -->
       <div class="project-box">
         <div class="project-img">
-          <img src="https://via.placeholder.com/400x160/1a1f35/00bfff?text=Online+Quiz+System" alt="Online Quiz System">
+          <img src="{% static 'Quiz.png' %}" alt="Online Quiz System">
         </div>
         <div class="project-info">
           <div class="project-meta">
@@ -1581,7 +1582,7 @@
       <!-- Project Card 3 -->
       <div class="project-box">
         <div class="project-img">
-          <img src="https://via.placeholder.com/400x160/1a1f35/00bfff?text=E-Commerce+Fish"
+          <img src="{% static 'Fehato.jpg' %}"
             alt="E-Commerce Website for Aquatic Fishes">
         </div>
         <div class="project-info">
@@ -1605,7 +1606,7 @@
       <!-- Project Card 4 -->
       <div class="project-box">
         <div class="project-img">
-          <img src="https://via.placeholder.com/400x160/1a1f35/00bfff?text=Crop+Bidding"
+          <img src="{% static 'Crop.png' %}"
             alt="E-Bidding Website for Agricultural Crops">
         </div>
         <div class="project-info">
