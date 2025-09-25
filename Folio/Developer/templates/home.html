@@ -106,12 +106,11 @@
     /* Mobile Menu */
     .mobile-menu-btn {
       display: none;
+      font-size: 1.8rem;
+      color: #64ffda;
       background: none;
       border: none;
-      color: #ccd6f6;
-      font-size: 1.5rem;
       cursor: pointer;
-      z-index: 1001;
     }
 
     /* Hero Section */
@@ -1473,6 +1472,14 @@
           t.scrollIntoView({ behavior: "smooth", block: "start" });
         }
       });
+    });
+
+    // Mobile menu toggle
+    const mobileBtn = document.querySelector(".mobile-menu-btn");
+    const navLinks = document.querySelector(".nav-links");
+
+    mobileBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
     });
 
     // Scroll animations
