@@ -66,7 +66,6 @@
       font-size: 1.8rem;
       color: #00bfff;
       text-decoration: none;
-      z-index: 1001;
     }
 
     .nav-links {
@@ -107,10 +106,10 @@
     /* Mobile Menu */
     .mobile-menu-btn {
       display: none;
-      font-size: 1.8rem;
-      color: #64ffda;
       background: none;
       border: none;
+      color: #ccd6f6;
+      font-size: 1.5rem;
       cursor: pointer;
       z-index: 1001;
     }
@@ -120,8 +119,9 @@
       min-height: 100vh;
       display: flex;
       align-items: center;
-      padding: 0 2rem;
-      max-width: 1200px;
+      padding-left: 6.25rem;
+      padding-right: 2rem;
+      max-width: none;
       margin: 0 auto;
     }
 
@@ -944,241 +944,6 @@
       opacity: 1;
       transform: translateY(0);
     }
-
-    /* Mobile Menu Styles */
-    .nav-links.active {
-      display: flex;
-      flex-direction: column;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      background: rgba(17, 34, 64, 0.98);
-      justify-content: center;
-      align-items: center;
-      z-index: 999;
-      gap: 2rem;
-    }
-
-    /* Responsive Styles */
-    @media screen and (max-width: 1200px) {
-      .hero {
-        padding-left: 2rem;
-      }
-
-      .project-image {
-        width: 70%;
-      }
-
-      .project-content {
-        width: 60%;
-      }
-    }
-
-    @media screen and (max-width: 992px) {
-
-      /* Tablet styles */
-      .hero {
-        padding-left: 1rem;
-        padding-right: 1rem;
-      }
-
-      .about-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .about-image {
-        margin: 0 auto;
-        order: -1;
-      }
-
-      .skills-visual {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .skills-illustration iframe {
-        max-width: 100%;
-        height: 300px;
-      }
-
-      .experience-container {
-        flex-direction: column;
-      }
-
-      .experience-tabs {
-        flex-direction: row;
-        overflow-x: auto;
-        min-width: 100%;
-        margin-bottom: 2rem;
-      }
-
-      .tab-button {
-        border-left: none;
-        border-bottom: 2px solid #233554;
-        white-space: nowrap;
-      }
-
-      .tab-button.active {
-        border-bottom-color: #00bfff;
-      }
-
-      .project-image {
-        width: 100%;
-      }
-
-      .project-content {
-        position: static;
-        transform: none;
-        width: 100%;
-        text-align: left;
-        margin-top: 2rem;
-      }
-
-      .project-card:nth-child(odd) .project-content,
-      .project-card:nth-child(even) .project-content {
-        text-align: left;
-      }
-
-      .project-card:nth-child(odd) .project-tech,
-      .project-card:nth-child(even) .project-tech {
-        justify-content: flex-start;
-      }
-
-      .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .social-links,
-      .email-side {
-        display: none;
-      }
-    }
-
-    @media screen and (max-width: 768px) {
-
-      /* Mobile styles */
-      .navbar {
-        padding: 1rem;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .mobile-menu-btn {
-        display: block;
-      }
-
-      .hero-content {
-        padding: 80px 1rem;
-        text-align: center;
-      }
-
-      .section {
-        padding: 80px 1rem;
-      }
-
-      .section-title {
-        font-size: 1.8rem;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .section-title::after {
-        width: 100px;
-        margin-left: 0;
-        margin-top: 10px;
-      }
-
-      .about-image {
-        max-width: 250px;
-      }
-
-      .skills-icons {
-        justify-content: center;
-      }
-
-      .skills-icons .icon {
-        width: 50px;
-        height: 50px;
-        font-size: 1.5rem;
-      }
-
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-title {
-        font-size: 2.5rem;
-      }
-
-      .cursor-light {
-        display: none;
-      }
-    }
-
-    @media screen and (max-width: 576px) {
-
-      /* Small mobile styles */
-      .hero-title {
-        font-size: 2.2rem;
-      }
-
-      .hero-subtitle-2 {
-        font-size: 1.8rem;
-      }
-
-      .hero-description {
-        font-size: 1rem;
-      }
-
-      .section-title {
-        font-size: 1.5rem;
-      }
-
-      .contact-title {
-        font-size: 2rem;
-      }
-
-      .project-box {
-        min-height: 280px;
-      }
-
-      .project-img img {
-        height: 140px;
-      }
-    }
-
-    @media screen and (max-width: 400px) {
-
-      /* Extra small screens */
-      .logo {
-        font-size: 1.5rem;
-      }
-
-      .hero-title {
-        font-size: 1.8rem;
-      }
-
-      .hero-subtitle-2 {
-        font-size: 1.5rem;
-      }
-
-      .section-title {
-        font-size: 1.3rem;
-      }
-
-      .contact-title {
-        font-size: 1.8rem;
-      }
-
-      .project-tech li {
-        font-size: 0.7rem;
-      }
-    }
   </style>
 </head>
 
@@ -1190,9 +955,6 @@
   <nav class="navbar">
     <div class="nav-container">
       <a href="/" class="logo">Herwin Stenil</a>
-      <button class="mobile-menu-btn">
-        <i class="fas fa-bars"></i>
-      </button>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
@@ -1221,7 +983,7 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <p class="hero-subtitle">Hi, I'm</p>
+      <p class="hero-subtitle">Hi, I’m</p>
       <h1 class="hero-title">Herwin Stenil.</h1>
       <h2 class="hero-subtitle-2">
         Full Stack Developer crafting scalable and engaging web applications.
@@ -1255,7 +1017,7 @@
     <div class="about-content">
       <div class="about-text">
         <p>
-          Hi, I'm Herwin Stenil, <span class="highlight">a B.E. Computer Science Engineering</span> graduate
+          Hi, I’m Herwin Stenil, <span class="highlight">a B.E. Computer Science Engineering</span> graduate
           from
           <a href="https://www.ucen.ac.in/">
             <span class="highlight">University College of Engineering Nagercoil.</span>
@@ -1275,7 +1037,7 @@
         </p>
 
         <p>
-          Currently, I'm focused on
+          Currently, I’m focused on
           <span class="highlight">mastering advanced web development technologies</span>
           and continuously expanding my skill set to stay ahead in the
           ever-evolving tech landscape. My goal is to contribute to
@@ -1284,8 +1046,7 @@
         </p>
       </div>
       <div class="about-image">
-        <img src="{% static '98974a.jpg' %}" alt="Herwin Stenil"
-          class="profile-img" />
+        <img src="{% static '98974a.jpg' %}" alt="Herwin Stenil" class="profile-img" />
       </div>
     </div>
   </section>
@@ -1436,8 +1197,7 @@
       <!-- Featured Project 1 -->
       <div class="project-card">
         <div class="project-image">
-          <img src="{% static 'Canteen.png' %}"
-            alt="Roriri Smart Canteen System">
+          <img src="{% static 'Canteen.png' %}" alt="Roriri Smart Canteen System">
         </div>
         <div class="project-content">
           <p class="project-overline">Featured Project</p>
@@ -1467,8 +1227,7 @@
       <!-- Featured Project 2 -->
       <div class="project-card">
         <div class="project-image">
-          <img src="{% static 'Volleyball.png' %}"
-            alt="Volleyball Tournament">
+          <img src="{% static 'Volleyball.png' %}" alt="Volleyball Tournament">
         </div>
         <div class="project-content">
           <p class="project-overline">Featured Project</p>
@@ -1497,8 +1256,7 @@
       <!-- Featured Project 3 -->
       <div class="project-card">
         <div class="project-image">
-          <img src="{% static 'XML.png' %}"
-            alt="Automated XML Proofing Tool">
+          <img src="{% static 'XML.png' %}" alt="Automated XML Proofing Tool">
         </div>
         <div class="project-content">
           <p class="project-overline">Featured Project</p>
@@ -1535,8 +1293,7 @@
       <!-- Project Card 1 -->
       <div class="project-box">
         <div class="project-img">
-          <img src="{% static 'Hospital.png' %}"
-            alt="Hospital Appointment Booking System">
+          <img src="{% static 'hospital.png' %}" alt="Hospital Appointment Booking System">
         </div>
         <div class="project-info">
           <div class="project-meta">
@@ -1559,7 +1316,7 @@
       <!-- Project Card 2 -->
       <div class="project-box">
         <div class="project-img">
-          <img src="{% static 'Quiz.png' %}" alt="Online Quiz System">
+          <img src="{% static 'quiz.png' %}" alt="Online Quiz System">
         </div>
         <div class="project-info">
           <div class="project-meta">
@@ -1582,8 +1339,7 @@
       <!-- Project Card 3 -->
       <div class="project-box">
         <div class="project-img">
-          <img src="{% static 'Fehato.jpg' %}"
-            alt="E-Commerce Website for Aquatic Fishes">
+          <img src="{% static 'Fehato.jpg' %}" alt="E-Commerce Website for Aquatic Fishes">
         </div>
         <div class="project-info">
           <div class="project-meta">
@@ -1606,8 +1362,7 @@
       <!-- Project Card 4 -->
       <div class="project-box">
         <div class="project-img">
-          <img src="{% static 'Crop.png' %}"
-            alt="E-Bidding Website for Agricultural Crops">
+          <img src="{% static 'Crop.png' %}" alt="E-Bidding Website for Agricultural Crops">
         </div>
         <div class="project-info">
           <div class="project-meta">
@@ -1626,6 +1381,52 @@
           </div>
         </div>
       </div>
+
+      <!-- Project Card 5 (Hidden initially) -->
+      <!-- <div class="project-box">
+        <div class="project-img">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=160&fit=crop"
+            alt="Data Analytics Dashboard">
+        </div>
+        <div class="project-info">
+          <div class="project-meta">
+            <span class="project-tech">Python | Flask | Chart.js | MongoDB</span>
+          </div>
+          <div class="project-row">
+            <h4 class="project-title">Data Analytics Dashboard</h4>
+          </div>
+          <div class="project-row project-desc-row">
+            <p class="project-desc">Interactive dashboard for data visualization with real-time charts, graphs, and
+              analytics for business intelligence.</p>
+            <div class="project-icons">
+              <a href="#" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- Project Card 6 (Hidden initially) -->
+      <!-- <div class="project-box">
+        <div class="project-img">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=160&fit=crop"
+            alt="Task Management App">
+        </div>
+        <div class="project-info">
+          <div class="project-meta">
+            <span class="project-tech">Python | Django | Bootstrap | SQLite</span>
+          </div>
+          <div class="project-row">
+            <h4 class="project-title">Task Management Application</h4>
+          </div>
+          <div class="project-row project-desc-row">
+            <p class="project-desc">Collaborative task management platform with project tracking, team collaboration,
+              and deadline management features.</p>
+            <div class="project-icons">
+              <a href="#" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+      </div> -->
     </div>
     <div style="text-align:center; margin-top:2rem;">
       <button id="show-more-btn" class="show-more-btn">Show More</button>
@@ -1637,9 +1438,9 @@
     <p class="contact-overline">What's Next?</p>
     <h2 class="contact-title">Get In Touch</h2>
     <p class="contact-description">
-      I'm currently open to exciting opportunities. Whether you have a project,
+      I’m currently open to exciting opportunities. Whether you have a project,
       a role in mind, or just want to connect, feel free to reach out —
-      I'd be happy to hear from you!
+      I’d be happy to hear from you!
     </p>
     <a href="mailto:herwinstenil24@gmail.com" class="contact-btn">Say Hello</a>
   </section>
@@ -1698,34 +1499,6 @@
       cursorLight.style.top = e.clientY + "px";
     });
 
-    // Mobile menu toggle
-    const mobileBtn = document.querySelector(".mobile-menu-btn");
-    const navLinks = document.querySelector(".nav-links");
-
-    mobileBtn.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-      
-      // Toggle menu icon
-      const icon = mobileBtn.querySelector("i");
-      if (navLinks.classList.contains("active")) {
-        icon.classList.remove("fa-bars");
-        icon.classList.add("fa-times");
-      } else {
-        icon.classList.remove("fa-times");
-        icon.classList.add("fa-bars");
-      }
-    });
-
-    // Close mobile menu when clicking a link
-    document.querySelectorAll(".nav-links a").forEach(link => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("active");
-        const icon = mobileBtn.querySelector("i");
-        icon.classList.remove("fa-times");
-        icon.classList.add("fa-bars");
-      });
-    });
-
     // Enhanced Show More functionality with smooth animations
     document.addEventListener("DOMContentLoaded", function () {
       const projects = document.querySelectorAll("#other-projects-grid .project-box");
@@ -1736,7 +1509,6 @@
       projects.forEach((card, idx) => {
         if (idx < 3) {
           card.classList.add("visible");
-
           // Add a small delay for staggered animation effect
           setTimeout(() => {
             card.classList.add("animating-in");
@@ -1746,7 +1518,6 @@
 
       showMoreBtn.addEventListener("click", function () {
         if (!showingAll) {
-
           // Show remaining projects with staggered animation
           projects.forEach((card, idx) => {
             if (idx >= 3) {
@@ -1759,7 +1530,6 @@
           showMoreBtn.textContent = "Show Less";
           showingAll = true;
         } else {
-          
           // Hide extra projects with animation
           projects.forEach((card, idx) => {
             if (idx >= 3) {
