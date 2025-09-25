@@ -1474,14 +1474,6 @@
       });
     });
 
-    // Mobile menu toggle
-    const mobileBtn = document.querySelector(".mobile-menu-btn");
-    const navLinks = document.querySelector(".nav-links");
-
-    mobileBtn.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-    });
-
     // Scroll animations
     const observer = new IntersectionObserver(
       (e) => {
@@ -1559,6 +1551,14 @@
           }, 300);
         }
       });
+    });
+
+    // Mobile menu toggle
+    const mobileBtn = document.querySelector(".mobile-menu-btn");
+    const navLinks = document.querySelector(".nav-links");
+
+    mobileBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
     });
   </script>
 </body>
