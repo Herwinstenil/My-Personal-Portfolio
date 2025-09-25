@@ -1445,117 +1445,115 @@
   </footer>
 
   <script>
-    // Tab functionality
-    const tabButtons = document.querySelectorAll(".tab-button"),
-      tabContents = document.querySelectorAll(".tab-content");
-    tabButtons.forEach((b) => {
-      b.addEventListener("click", () => {
-        const t = b.getAttribute("data-tab");
-        tabButtons.forEach((x) => x.classList.remove("active"));
-        tabContents.forEach((c) => c.classList.remove("active"));
-        b.classList.add("active");
-        document.getElementById(t).classList.add("active");
-      });
-    });
+    document.addEventListener("DOMContentLoaded", () => {
+      // --- Tabs ---
+      const tabButtons = document.querySelectorAll(".tab-button");
+      const tabContents = document.querySelectorAll(".tab-content");
 
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach((a) => {
-      a.addEventListener("click", function (e) {
-        e.preventDefault();
-        const t = document.querySelector(this.getAttribute("href"));
-        if (t) {
-          t.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      });
-    });
+      tabButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const tabId = btn.getAttribute("data-tab");
+          const targetContent = document.getElementById(tabId);
+          if (!targetContent) return;
 
-    // Scroll animations
-    const observer = new IntersectionObserver(
-      (e) => {
-        e.forEach((en) => {
-          if (en.isIntersecting) {
-            en.target.classList.add("animate-visible");
-            observer.unobserve(en.target);
-          }
+          tabButtons.forEach((b) => b.classList.remove("active"));
+          tabContents.forEach((c) => c.classList.remove("active"));
+
+          btn.classList.add("active");
+          targetContent.classList.add("active");
         });
-      },
-      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
-    );
-    document.querySelectorAll(".section,.project-card").forEach((s) => {
-      s.classList.add("animate-hidden");
-      observer.observe(s);
-    });
+      });
 
-    // Cursor light effect
-    const cursorLight = document.querySelector(".cursor-light");
-    document.addEventListener("mousemove", (e) => {
-      cursorLight.style.left = e.clientX + "px";
-      cursorLight.style.top = e.clientY + "px";
-    });
+      // --- Smooth Scrolling ---
+      document.querySelectorAll('a[href^="#"]').forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const target = document.querySelector(link.getAttribute("href"));
+          if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      });
 
-    // Enhanced Show More functionality with smooth animations
-    document.addEventListener("DOMContentLoaded", function () {
+      // --- Scroll Animations ---
+      const observer = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("animate-visible");
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+      );
+
+      document.querySelectorAll(".section,.project-card").forEach((el) => {
+        el.classList.add("animate-hidden");
+        observer.observe(el);
+      });
+
+      // --- Cursor Light Effect ---
+      const cursorLight = document.querySelector(".cursor-light");
+      if (cursorLight) {
+        document.addEventListener("mousemove", (e) => {
+          cursorLight.style.left = e.clientX + "px";
+          cursorLight.style.top = e.clientY + "px";
+        });
+      }
+
+      // --- Show More / Show Less Projects ---
       const projects = document.querySelectorAll("#other-projects-grid .project-box");
       const showMoreBtn = document.getElementById("show-more-btn");
       let showingAll = false;
+      let animating = false;
 
-      // Show only first 3 projects initially
-      projects.forEach((card, idx) => {
-        if (idx < 3) {
-          card.classList.add("visible");
-          // Add a small delay for staggered animation effect
-          setTimeout(() => {
-            card.classList.add("animating-in");
-          }, idx * 100);
-        }
-      });
+      if (projects.length && showMoreBtn) {
+        // Show first 3 projects initially
+        projects.forEach((card, idx) => {
+          if (idx < 3) {
+            card.classList.add("visible");
+            setTimeout(() => card.classList.add("animating-in"), idx * 100);
+          }
+        });
 
-      showMoreBtn.addEventListener("click", function () {
-        if (!showingAll) {
-          // Show remaining projects with staggered animation
-          projects.forEach((card, idx) => {
-            if (idx >= 3) {
-              setTimeout(() => {
-                card.classList.add("visible", "animating-in");
-              }, (idx - 3) * 150); // Staggered delay
-            }
-          });
+        showMoreBtn.addEventListener("click", () => {
+          if (animating) return; // prevent double click
+          animating = true;
 
-          showMoreBtn.textContent = "Show Less";
-          showingAll = true;
-        } else {
-          // Hide extra projects with animation
-          projects.forEach((card, idx) => {
-            if (idx >= 3) {
-              card.classList.add("animating-out");
-              setTimeout(() => {
-                card.classList.remove("visible", "animating-in", "animating-out");
-              }, 500); // Match animation duration
-            }
-          });
-
-          showMoreBtn.textContent = "Show More";
-          showingAll = false;
-
-          // Smooth scroll to projects section
-          setTimeout(() => {
-            document.querySelector(".other-projects").scrollIntoView({
-              behavior: "smooth",
-              block: "start"
+          if (!showingAll) {
+            projects.forEach((card, idx) => {
+              if (idx >= 3) {
+                setTimeout(() => card.classList.add("visible", "animating-in"), (idx - 3) * 150);
+              }
             });
-          }, 300);
-        }
-      });
-    });
+            showMoreBtn.textContent = "Show Less";
+            showingAll = true;
+            setTimeout(() => (animating = false), (projects.length - 3) * 150 + 500);
+          } else {
+            projects.forEach((card, idx) => {
+              if (idx >= 3) {
+                card.classList.add("animating-out");
+                setTimeout(() => card.classList.remove("visible", "animating-in", "animating-out"), 500);
+              }
+            });
+            showMoreBtn.textContent = "Show More";
+            showingAll = false;
+            setTimeout(() => {
+              document.querySelector(".other-projects")?.scrollIntoView({ behavior: "smooth", block: "start" });
+              animating = false;
+            }, 500);
+          }
+        });
+      }
 
-    // Mobile menu toggle
-    const mobileBtn = document.querySelector(".mobile-menu-btn");
-    const navLinks = document.querySelector(".nav-links");
-
-    mobileBtn.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
+      // --- Mobile Menu Toggle ---
+      const mobileBtn = document.querySelector(".mobile-menu-btn");
+      const navLinks = document.querySelector(".nav-links");
+      if (mobileBtn && navLinks) {
+        mobileBtn.addEventListener("click", () => navLinks.classList.toggle("active"));
+      }
     });
   </script>
+
 </body>
 
 </html>
