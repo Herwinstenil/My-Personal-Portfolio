@@ -1001,15 +1001,15 @@
   </div>
 
   <!-- Hero Section -->
- <section class="hero">
-  <div class="hero-content">
-    <p class="hero-subtitle" id="type-subtitle"></p>
-    <h1 class="hero-title" id="type-title"></h1>
-    <h2 class="hero-subtitle-2" id="type-subtitle2"></h2>
-    <p class="hero-description" id="type-description"></p>
-    <p class="hero-availability" id="type-availability"></p>
-  </div>
-</section>
+  <section class="hero">
+    <div class="hero-content">
+      <p class="hero-subtitle" id="type-subtitle"></p>
+      <h1 class="hero-title" id="type-title"></h1>
+      <h2 class="hero-subtitle-2" id="type-subtitle2"></h2>
+      <p class="hero-description" id="type-description"></p>
+      <p class="hero-availability" id="type-availability"></p>
+    </div>
+  </section>
 
   <!-- About Section -->
   <section id="about" class="section">
@@ -1560,43 +1560,44 @@
     });
 
     function typeWriterHTML(elementId, html, speed, callback) {
-  const el = document.getElementById(elementId);
-  let i = 0;
-  let isTag = false;
-  let text = '';
-  function type() {
-    text = html.slice(0, i);
-    el.innerHTML = text + '<span class="typewriter-cursor">|</span>';
-    if (html[i] === '<') isTag = true;
-    if (html[i] === '>') isTag = false;
-    if (i < html.length) {
-      i++;
-      setTimeout(type, isTag ? 0 : speed);
-    } else {
-      el.innerHTML = html; // Remove cursor after typing
-      if (callback) callback();
+      const el = document.getElementById(elementId);
+      let i = 0;
+      let isTag = false;
+      let text = '';
+      function type() {
+        text = html.slice(0, i);
+        el.innerHTML = text + '<span class="typewriter-cursor">|</span>';
+        if (html[i] === '<') isTag = true;
+        if (html[i] === '>') isTag = false;
+        if (i < html.length) {
+          i++;
+          setTimeout(type, isTag ? 0 : speed);
+        } else {
+          el.innerHTML = html; // Remove cursor after typing
+          if (callback) callback();
+        }
+      }
+      type();
     }
-  }
-  type();
-}
 
     // Sequence typing for all hero fields
-   document.addEventListener("DOMContentLoaded", function () {
-  typeWriterHTML("type-subtitle", "Hi, I’m", 60, function () {
-    typeWriterHTML("type-title", "Herwin Stenil.", 80, function () {
-      typeWriterHTML("type-subtitle2", "Full Stack Developer crafting scalable and engaging web applications.", 30, function () {
-        typeWriterHTML(
-          "type-description",
-          'Specializing in <span class="highlight">Django,</span> <span class="highlight">Flask,</span> <span class="highlight">React JS</span> and <span class="highlight">Tailwind CSS.</span> Proficient in <span class="highlight">HTML5,</span> <span class="highlight">CSS3,</span> <span class="highlight">JavaScript (ES6+),</span> <span class="highlight">Bootstrap 5</span> and <span class="highlight">Python,</span> with a strong focus on <span class="highlight">UI/UX design.</span> Experienced in working with <span class="highlight">MongoDB,</span> <span class="highlight">SQLite,</span> <span class="highlight">Django ORM</span> and implementing <span class="highlight">REST APIs,</span> <span class="highlight">Authentication</span> and <span class="highlight">CRUD operations.</span>',
-          10,
-          function () {
-            typeWriterHTML("type-availability", "Currently open to job opportunities", 40);
-          }
-        );
+    document.addEventListener("DOMContentLoaded", function () {
+      typeWriterHTML("type-subtitle", "Hi, I’m", 60, function () {
+        typeWriterHTML("type-title", "Herwin Stenil.", 80, function () {
+          typeWriterHTML("type-subtitle2", "Full Stack Developer crafting scalable and engaging web applications.", 30, function () {
+            typeWriterHTML(
+              "type-description",
+              'Specializing in <span class="highlight">Django,</span> <span class="highlight">Flask,</span> <span class="highlight">React JS</span> and <span class="highlight">Tailwind CSS.</span> Proficient in <span class="highlight">HTML5,</span> <span class="highlight">CSS3,</span> <span class="highlight">JavaScript (ES6+),</span> <span class="highlight">Bootstrap 5</span> and <span class="highlight">Python,</span> with a strong focus on <span class="highlight">UI/UX design.</span> Experienced in working with <span class="highlight">MongoDB,</span> <span class="highlight">SQLite,</span> <span class="highlight">Django ORM</span> and implementing <span class="highlight">REST APIs,</span> <span class="highlight">Authentication</span> and <span class="highlight">CRUD operations.</span>',
+              10,
+              function () {
+                typeWriterHTML("type-availability", "Currently open to job opportunities", 40);
+              }
+            );
+          });
+        });
       });
     });
-  });
-});
   </script>
 </body>
+
 </html>
