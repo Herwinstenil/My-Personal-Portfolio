@@ -185,16 +185,25 @@
     }
 
     /* Typewriter cursor */
-.typewriter-cursor {
-  display: inline-block;
-  width: 1ch;
-  animation: blink 1s steps(1) infinite;
-  color: #00bfff;
-}
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
-}
+    .typewriter-cursor {
+      display: inline-block;
+      width: 1ch;
+      animation: blink 1s steps(1) infinite;
+      color: #00bfff;
+    }
+
+    @keyframes blink {
+
+      0%,
+      50% {
+        opacity: 1;
+      }
+
+      51%,
+      100% {
+        opacity: 0;
+      }
+    }
 
     /* Social Links */
     .social-links,
@@ -1571,35 +1580,33 @@
     });
 
     function typeWriter(elementId, text, speed, callback) {
-  const el = document.getElementById(elementId);
-  let i = 0;
-  function type() {
-    el.innerHTML = text.slice(0, i) + '<span class="typewriter-cursor">|</span>';
-    if (i < text.length) {
-      i++;
-      setTimeout(type, speed);
-    } else {
-      el.innerHTML = text; // Remove cursor after typing
-      if (callback) callback();
+      const el = document.getElementById(elementId);
+      let i = 0;
+      function type() {
+        el.innerHTML = text.slice(0, i) + '<span class="typewriter-cursor">|</span>';
+        if (i < text.length) {
+          i++;
+          setTimeout(type, speed);
+        } else {
+          el.innerHTML = text; // Remove cursor after typing
+          if (callback) callback();
+        }
+      }
+      type();
     }
-  }
-  type();
-}
 
-// Sequence typing for all hero fields
-document.addEventListener("DOMContentLoaded", function() {
-  typeWriter("type-subtitle", "Hi, I’m", 60, function() {
-    typeWriter("type-title", "Herwin Stenil.", 80, function() {
-      typeWriter("type-subtitle2", "Full Stack Developer crafting scalable and engaging web applications.", 30, function() {
-        typeWriter("type-description", "Specializing in Django, Flask, React JS and Tailwind CSS. Proficient in HTML5, CSS3, JavaScript (ES6+), Bootstrap 5 and Python, with a strong focus on UI/UX design. Experienced in working with MongoDB, SQLite, Django ORM and implementing REST APIs, Authentication and CRUD operations.", 10, function() {
-          typeWriter("type-availability", "Currently open to job opportunities", 40);
+    // Sequence typing for all hero fields
+    document.addEventListener("DOMContentLoaded", function () {
+      typeWriter("type-subtitle", "Hi, I’m", 60, function () {
+        typeWriter("type-title", "Herwin Stenil.", 80, function () {
+          typeWriter("type-subtitle2", "Full Stack Developer crafting scalable and engaging web applications.", 30, function () {
+            typeWriter("type-description", "Specializing in Django, Flask, React JS and Tailwind CSS. Proficient in HTML5, CSS3, JavaScript (ES6+), Bootstrap 5 and Python, with a strong focus on UI/UX design. Experienced in working with MongoDB, SQLite, Django ORM and implementing REST APIs, Authentication and CRUD operations.", 10, function () {
+              typeWriter("type-availability", "Currently open to job opportunities", 40);
+            });
+          });
         });
       });
     });
-  });
-});
   </script>
-
 </body>
-
 </html>
