@@ -109,7 +109,6 @@
       border: none;
       cursor: pointer;
       margin-left: auto;
-      /* pushes it to the right */
     }
 
     /* Hero Section */
@@ -982,7 +981,6 @@
     }
 
     /* ===== MEDIA QUERIES ===== */
-
     /* Large devices (desktops, less than 1200px) */
     @media (max-width: 1199.98px) {
       .section {
@@ -1084,9 +1082,7 @@
       .navbar {
         padding: 1rem;
         display: flex;
-
       }
-
 
       .nav-container .logo {
         position: absolute;
@@ -1264,6 +1260,7 @@
         <li><a href="{% static 'Herwin Resume.pdf' %}" target="_blank" class="resume-btn">Resume</a></li>
       </ul>
     </div>
+
     <!-- Mobile Menu Button -->
     <button class="mobile-menu-btn" aria-label="Toggle Navigation">
       <i class="fas fa-bars"></i>
@@ -1293,14 +1290,22 @@
         Full Stack Developer crafting scalable and engaging web applications.
       </h2>
       <p class="hero-description">
-        Specializing in <span class="highlight">Django,</span> <span class="highlight">Flask,</span> <span
-          class="highlight">React JS</span> and <span class="highlight">Tailwind CSS.</span> Proficient in <span
-          class="highlight">HTML5,</span> <span class="highlight">CSS3,</span> <span class="highlight">JavaScript
-          (ES6+),</span> <span class="highlight">Bootstrap 5</span> and <span class="highlight">Python,</span> with a
-        strong focus on <span class="highlight">UI/UX design.</span> Experienced in working with <span
-          class="highlight">MongoDB,</span> <span class="highlight">SQLite,</span> <span class="highlight">Django
-          ORM</span> and implementing <span class="highlight">REST APIs,</span> <span
-          class="highlight">Authentication</span> and <span class="highlight">CRUD operations.</span>
+        Specializing in <span class="highlight">Django,</span>
+        <span class="highlight">Flask,</span>
+        <span class="highlight">React JS</span> and
+        <span class="highlight">Tailwind CSS.</span> Proficient in
+        <span class="highlight">HTML5,</span>
+        <span class="highlight">CSS3,</span>
+        <span class="highlight">JavaScript (ES6+),</span>
+        <span class="highlight">Bootstrap 5</span> and
+        <span class="highlight">Python,</span> with a strong focus on
+        <span class="highlight">UI/UX design.</span> Experienced in working with
+        <span class="highlight">MongoDB,</span>
+        <span class="highlight">SQLite,</span>
+        <span class="highlight">Django ORM</span> and implementing
+        <span class="highlight">REST APIs,</span>
+        <span class="highlight">Authentication</span> and
+        <span class="highlight">CRUD operations.</span>
       </p>
       <p class="hero-availability">Currently open to job opportunities</p>
     </div>
@@ -1340,14 +1345,17 @@
   <section id="skills" class="section">
     <h2 class="section-title">What I Do</h2>
     <div class="skills-visual">
+
       <!-- Left: Lottie Animation -->
       <div class="skills-illustration">
         <iframe src="https://lottie.host/embed/854fc1e1-8edd-4661-bc40-6b1b62b020b6/CMrishbT2w.lottie"
           style="width: 100%; max-width: 400px; height: 400px; border: none"></iframe>
       </div>
+
       <!-- Right: Text & Icons -->
       <div class="skills-list-container">
         <h3 class="skills-heading">Full Stack Development</h3>
+
         <!-- Tech Icons Row -->
         <div class="skills-icons">
           <div class="icon html" data-tooltip="HTML5">
@@ -1381,6 +1389,7 @@
             <i class="devicon-django-plain"></i>
           </div>
         </div>
+
         <!-- Description List -->
         <ul class="skills-list">
           <li> Proficient in <span class="highlight">Python</span> for backend development and Frontend development
@@ -1546,6 +1555,7 @@
   <section class="other-projects">
     <h3 class="other-projects-title">My Projects</h3>
     <div class="projects-grid" id="other-projects-grid">
+
       <!-- Project Card 1 -->
       <div class="project-box">
         <div class="project-img">
@@ -1698,6 +1708,8 @@
 
   <!-- Footer -->
   <footer class="footer">
+
+    <!-- Mobile Social Links -->
     <div class="mobile-social-links">
       <a href="https://github.com/herwinstenil" target="_blank"><i class="fab fa-github"></i></a>
       <a href="https://www.linkedin.com/in/herwin-stenil-e-b65317263" target="_blank"><i
@@ -1706,13 +1718,11 @@
       <a href="https://wa.me/8667208745" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
     <p>Design & Built by Herwin Stenil</p>
-    <!-- Mobile Social Links -->
-
   </footer>
 
   <script>
+    // --- Tab Functionality ---
     document.addEventListener("DOMContentLoaded", () => {
-      // --- Tabs ---
       const tabButtons = document.querySelectorAll(".tab-button");
       const tabContents = document.querySelectorAll(".tab-content");
 
@@ -1844,9 +1854,9 @@
       type();
     }
 
+    // Callback after typing completes
     document.addEventListener("DOMContentLoaded", function () {
       typeWriterHTML("type-title", "Herwin Stenil.", 100, function () {
-        // Callback after typing completes
       });
     });
   </script>
