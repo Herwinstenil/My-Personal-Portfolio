@@ -1019,7 +1019,6 @@
 
       .skills-visual {
         flex-direction: column;
-        text-align: center;
       }
 
       .skills-list-container {
@@ -1028,6 +1027,7 @@
 
       .skills-icons {
         justify-content: center;
+          flex-wrap: wrap;
       }
 
       .experience-container {
@@ -1052,33 +1052,32 @@
       }
 
       .project-card {
-        margin-bottom: 6rem;
+        margin-bottom: 4rem;
+        position: relative;
       }
 
       .project-image {
         width: 100%;
+        margin: 0 auto;
+         max-width: 600px;
       }
 
       .project-content {
         position: static;
         transform: none;
         width: 100%;
-        text-align: center;
         margin-top: 1.5rem;
-      }
-
-      .project-card:nth-child(odd) .project-content,
-      .project-card:nth-child(even) .project-content {
-        text-align: center;
       }
 
       .project-card:nth-child(odd) .project-tech,
       .project-card:nth-child(even) .project-tech {
         justify-content: center;
+        
       }
 
       .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 0.5fr);
+        justify-content: center;
       }
     }
 
