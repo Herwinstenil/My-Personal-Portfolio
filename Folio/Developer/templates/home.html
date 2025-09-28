@@ -981,16 +981,86 @@
     }
 
     /* ===== MEDIA QUERIES ===== */
-    /* Large devices (desktops, less than 1200px) */
-    @media (max-width: 1199.98px) {
-      .section {
+   /* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+    .section {
         padding: 80px 2rem;
-      }
-
-      .hero {
-        padding: 80px 2rem;
-      }
+        margin-left: 70px;
+        margin-right: 70px;
+        max-width: calc(100% - 140px);
     }
+
+    .hero {
+        padding: 80px 2rem;
+        margin-left: 70px;
+        margin-right: 70px;
+        max-width: calc(100% - 140px);
+    }
+    
+    /* Adjust side elements positioning */
+    .social-links {
+        left: 25px;
+    }
+    
+    .email-side {
+        right: 25px;
+    }
+    
+    /* Ensure content doesn't get too narrow */
+    .nav-container {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    
+    .hero-content {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    
+    .about-content {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    
+    /* Project adjustments */
+    .project-image {
+        width: 55%;
+    }
+    
+    .project-content {
+        width: 45%;
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    
+    /* Skills section */
+    .skills-visual {
+        gap: 2.5rem;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    
+    .skills-illustration iframe {
+        max-width: 350px;
+        height: 350px;
+    }
+    
+    /* Experience section */
+    .experience-container {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    
+    /* Contact section */
+    .contact-section {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+}
 
     /* Medium devices (tablets, less than 992px) */
     @media (max-width: 991.98px) {
