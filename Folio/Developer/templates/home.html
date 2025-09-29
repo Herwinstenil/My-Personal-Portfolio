@@ -980,7 +980,8 @@
       transform: translateY(0);
     }
 
-    /* ===== MEDIA QUERIES ===== */
+    /* ===== RESPONSIVE MEDIA QUERIES ===== */
+
     /* 4K devices (large desktops, 2560px and up) */
     @media (min-width: 2560px) {
       .nav-container .logo {
@@ -1037,42 +1038,34 @@
         max-width: 100%;
         margin: 0 auto;
         text-align: left;
-        /* Align left like about section */
       }
 
       .hero-subtitle {
         font-size: 2rem;
         margin-left: 0;
-        /* Remove any centering */
       }
 
       .hero-title {
         font-size: clamp(3rem, 8vw, 6rem);
         text-align: left;
-        /* Align left like about title */
         margin-left: 0;
       }
 
       .hero-subtitle-2 {
         font-size: clamp(2.5rem, 6vw, 4.5rem);
         text-align: left;
-        /* Align left */
         margin-left: 0;
       }
 
       .hero-description {
         font-size: 1.3rem;
         max-width: 100%;
-        /* Full width like about text */
         margin: 0 auto 2.5rem 0;
-        /* Remove auto margins for centering */
         text-align: left;
-        /* Align left like about text */
       }
 
       .hero-availability {
         text-align: left;
-        /* Align left */
         margin-left: 0;
       }
 
@@ -1116,7 +1109,6 @@
       /* Project section alignment - make it straight like about section */
       .featured-projects {
         max-width: 100%;
-        /* Match about section width */
         margin: 0 auto;
       }
 
@@ -1124,79 +1116,60 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        /* Align left like about section */
         margin-bottom: 6rem;
       }
 
       .project-image {
         width: 100%;
-        /* Full width container */
         max-width: none;
-        /* Remove max-width restriction */
         margin: 0 0 2rem 0;
-        /* Consistent spacing */
         height: 500px;
-        /* Fixed height for 4K screens */
         overflow: hidden;
-        /* Ensure image doesn't overflow */
         border-radius: 8px;
-        /* Add some rounding */
       }
 
       .project-image img {
         width: 100%;
         height: 100%;
-        /* Fill the container */
         object-fit: cover;
-        /* Ensure image covers the area without distortion */
         object-position: center;
-        /* Center the image */
         transition: transform 0.4s ease;
       }
 
       .project-image img:hover {
         transform: scale(1.05);
-        /* Keep hover effect */
       }
 
 
       .project-content {
         width: 100%;
-        /* Full width */
         text-align: left;
-        /* Align left like about text */
         margin-top: 0;
-        /* Remove extra margin */
       }
 
       .project-overline {
         font-size: 1rem;
         text-align: left;
-        /* Align left */
       }
 
       .project-title {
         font-size: 1.5rem;
         text-align: left;
-        /* Align left */
       }
 
       .project-description-box {
         padding: 1.5rem;
         text-align: left;
-        /* Align left */
       }
 
       .project-description-box p {
         font-size: 1rem;
         text-align: left;
-        /* Align left */
       }
 
       .project-card:nth-child(odd) .project-tech,
       .project-card:nth-child(even) .project-tech {
         justify-content: flex-start;
-        /* Align left */
       }
 
       /* Adjust side elements positioning for larger screens */
@@ -1221,7 +1194,6 @@
       .projects-grid {
         grid-template-columns: repeat(3, 1fr);
         max-width: 100%;
-        /* Match about section width */
         margin: 0 auto;
         gap: 2.5rem;
       }
@@ -1236,7 +1208,6 @@
       .skills-heading {
         font-size: 2.2rem;
         text-align: left;
-        /* Align left like about title */
       }
 
       .skills-icons .icon {
@@ -1249,7 +1220,6 @@
         font-size: 1.1rem;
         margin-bottom: 1.2rem;
         text-align: left;
-        /* Align left like about text */
       }
 
       .skills-illustration iframe {
@@ -1266,42 +1236,34 @@
       .section-title {
         font-size: 3rem;
         text-align: left;
-        /* Align left like about title */
         justify-content: flex-start;
-        /* Remove center alignment */
       }
 
       .section-title::after {
         margin-left: 20px;
-        /* Consistent with about section */
       }
 
       .job-title {
         font-size: 1.6rem;
         text-align: left;
-        /* Align left */
       }
 
       .job-date {
         font-size: 1rem;
         text-align: left;
-        /* Align left */
       }
 
       .job-description li {
         font-size: 1.1rem;
         margin-bottom: 1rem;
         text-align: left;
-        /* Align left */
       }
 
       /* Contact section */
       .contact-section {
         max-width: 100%;
-        /* Match about section width */
         margin: 0 auto;
         text-align: center;
-        /* Keep contact centered */
       }
 
       .contact-overline {
