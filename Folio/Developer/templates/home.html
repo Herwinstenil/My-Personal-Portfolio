@@ -982,311 +982,350 @@
 
     /* ===== MEDIA QUERIES ===== */
     /* 4K devices (large desktops, 2560px and up) */
-@media (min-width: 2560px) {
-    .nav-container .logo {
+    @media (min-width: 2560px) {
+      .nav-container .logo {
         position: absolute;
         left: 1%;
         font-size: 2.2rem;
-    }
+      }
 
-    .nav-container .nav-links {
+      .nav-container .nav-links {
         position: absolute;
         right: 1%;
-    }
+      }
 
-    /* Make sure all sections have the same alignment */
-    .section {
+      /* Make sure all sections have the same alignment */
+      .section {
         padding: 120px 3rem;
         margin-left: 200px;
         margin-right: 200px;
         max-width: calc(100% - 400px);
-    }
+      }
 
-    .hero {
+      .hero {
         padding: 120px 3rem;
         margin-left: 200px;
         margin-right: 200px;
         max-width: calc(100% - 400px);
-    }
+      }
 
-    /* Ensure navbar container aligns with content */
-    .nav-container {
+      /* Ensure navbar container aligns with content */
+      .nav-container {
         max-width: calc(100% - 400px);
         margin: 0 200px;
         padding: 0;
         display: flex;
         justify-content: space-between;
         min-height: 70px;
-    }
+      }
 
-    .nav-links {
+      .nav-links {
         gap: 3rem;
-    }
+      }
 
-    .nav-links a {
+      .nav-links a {
         font-size: 1.1rem;
-    }
+      }
 
-    .resume-btn {
+      .resume-btn {
         padding: 0.6rem 1.2rem;
         font-size: 1rem;
-    }
+      }
 
-    /* Hero section alignment - make it straight like about section */
-    .hero-content {
+      /* Hero section alignment - make it straight like about section */
+      .hero-content {
         max-width: 100%;
         margin: 0 auto;
-        text-align: left; /* Align left like about section */
-    }
+        text-align: left;
+        /* Align left like about section */
+      }
 
-    .hero-subtitle {
+      .hero-subtitle {
         font-size: 2rem;
-        margin-left: 0; /* Remove any centering */
-    }
+        margin-left: 0;
+        /* Remove any centering */
+      }
 
-    .hero-title {
+      .hero-title {
         font-size: clamp(3rem, 8vw, 6rem);
-        text-align: left; /* Align left like about title */
+        text-align: left;
+        /* Align left like about title */
         margin-left: 0;
-    }
+      }
 
-    .hero-subtitle-2 {
+      .hero-subtitle-2 {
         font-size: clamp(2.5rem, 6vw, 4.5rem);
-        text-align: left; /* Align left */
+        text-align: left;
+        /* Align left */
         margin-left: 0;
-    }
+      }
 
-    .hero-description {
+      .hero-description {
         font-size: 1.3rem;
-        max-width: 100%; /* Full width like about text */
-        margin: 0 auto 2.5rem 0; /* Remove auto margins for centering */
-        text-align: left; /* Align left like about text */
-    }
+        max-width: 100%;
+        /* Full width like about text */
+        margin: 0 auto 2.5rem 0;
+        /* Remove auto margins for centering */
+        text-align: left;
+        /* Align left like about text */
+      }
 
-    .hero-availability {
-        text-align: left; /* Align left */
+      .hero-availability {
+        text-align: left;
+        /* Align left */
         margin-left: 0;
-    }
+      }
 
-    /* About section alignment fixes */
-    .about-content {
+      /* About section alignment fixes */
+      .about-content {
         max-width: 100%;
         margin: 0 auto;
         gap: 60px;
         display: grid;
         grid-template-columns: 2fr 1fr;
         align-items: start;
-    }
+      }
 
-    .about-text {
+      .about-text {
         text-align: left;
         padding-right: 2rem;
         font-size: 1.1rem;
         line-height: 1.8;
-    }
+      }
 
-    .about-image {
+      .about-image {
         max-width: 400px;
         margin: 0;
         justify-self: end;
-    }
+      }
 
-    .about-image::before {
+      .about-image::before {
         top: 25px;
         left: 25px;
-    }
+      }
 
-    .profile-img {
+      .profile-img {
         max-width: 350px;
-    }
+      }
 
-    .about-image:hover::before {
+      .about-image:hover::before {
         top: 20px;
         left: 20px;
-    }
+      }
 
-    /* Project section alignment - make it straight like about section */
-    .featured-projects {
-        max-width: 100%; /* Match about section width */
+      /* Project section alignment - make it straight like about section */
+      .featured-projects {
+        max-width: 100%;
+        /* Match about section width */
         margin: 0 auto;
-    }
+      }
 
-    .project-card {
+      .project-card {
         display: flex;
         flex-direction: column;
-        align-items: flex-start; /* Align left like about section */
+        align-items: flex-start;
+        /* Align left like about section */
         margin-bottom: 6rem;
-    }
+      }
 
-    .project-image {
-        width: 100%; /* Full width container */
-        max-width: none; /* Remove max-width restriction */
-        margin: 0 0 2rem 0; /* Consistent spacing */
-          height: 500px; /* Fixed height for 4K screens */
-        overflow: hidden; /* Ensure image doesn't overflow */
-        border-radius: 8px; /* Add some rounding */
-    }
-
-        .project-image img {
+      .project-image {
         width: 100%;
-        height: 100%; /* Fill the container */
-        object-fit: cover; /* Ensure image covers the area without distortion */
-        object-position: center; /* Center the image */
+        /* Full width container */
+        max-width: none;
+        /* Remove max-width restriction */
+        margin: 0 0 2rem 0;
+        /* Consistent spacing */
+        height: 500px;
+        /* Fixed height for 4K screens */
+        overflow: hidden;
+        /* Ensure image doesn't overflow */
+        border-radius: 8px;
+        /* Add some rounding */
+      }
+
+      .project-image img {
+        width: 100%;
+        height: 100%;
+        /* Fill the container */
+        object-fit: cover;
+        /* Ensure image covers the area without distortion */
+        object-position: center;
+        /* Center the image */
         transition: transform 0.4s ease;
-    }
+      }
 
-    .project-image img:hover {
-        transform: scale(1.05); /* Keep hover effect */
-    }
+      .project-image img:hover {
+        transform: scale(1.05);
+        /* Keep hover effect */
+      }
 
 
-    .project-content {
-        width: 100%; /* Full width */
-        text-align: left; /* Align left like about text */
-        margin-top: 0; /* Remove extra margin */
-    }
+      .project-content {
+        width: 100%;
+        /* Full width */
+        text-align: left;
+        /* Align left like about text */
+        margin-top: 0;
+        /* Remove extra margin */
+      }
 
-    .project-overline {
+      .project-overline {
         font-size: 1rem;
-        text-align: left; /* Align left */
-    }
+        text-align: left;
+        /* Align left */
+      }
 
-    .project-title {
+      .project-title {
         font-size: 1.5rem;
-        text-align: left; /* Align left */
-    }
+        text-align: left;
+        /* Align left */
+      }
 
-    .project-description-box {
+      .project-description-box {
         padding: 1.5rem;
-        text-align: left; /* Align left */
-    }
+        text-align: left;
+        /* Align left */
+      }
 
-    .project-description-box p {
+      .project-description-box p {
         font-size: 1rem;
-        text-align: left; /* Align left */
-    }
+        text-align: left;
+        /* Align left */
+      }
 
-    .project-card:nth-child(odd) .project-tech,
-    .project-card:nth-child(even) .project-tech {
-        justify-content: flex-start; /* Align left */
-    }
+      .project-card:nth-child(odd) .project-tech,
+      .project-card:nth-child(even) .project-tech {
+        justify-content: flex-start;
+        /* Align left */
+      }
 
-    /* Adjust side elements positioning for larger screens */
-    .social-links {
+      /* Adjust side elements positioning for larger screens */
+      .social-links {
         left: 80px;
-    }
+      }
 
-    .social-links a {
+      .social-links a {
         font-size: 1.5rem;
         margin-bottom: 1.2rem;
-    }
+      }
 
-    .email-side {
+      .email-side {
         right: 80px;
-    }
+      }
 
-    .email-link {
+      .email-link {
         font-size: 1rem;
-    }
+      }
 
-    /* Other projects grid */
-    .projects-grid {
+      /* Other projects grid */
+      .projects-grid {
         grid-template-columns: repeat(3, 1fr);
-        max-width: 100%; /* Match about section width */
+        max-width: 100%;
+        /* Match about section width */
         margin: 0 auto;
         gap: 2.5rem;
-    }
+      }
 
-    /* Skills section */
-    .skills-visual {
+      /* Skills section */
+      .skills-visual {
         gap: 4rem;
         max-width: 100%;
         margin: 0 auto;
-    }
+      }
 
-    .skills-heading {
+      .skills-heading {
         font-size: 2.2rem;
-        text-align: left; /* Align left like about title */
-    }
+        text-align: left;
+        /* Align left like about title */
+      }
 
-    .skills-icons .icon {
+      .skills-icons .icon {
         width: 70px;
         height: 70px;
         font-size: 2.2rem;
-    }
+      }
 
-    .skills-list li {
+      .skills-list li {
         font-size: 1.1rem;
         margin-bottom: 1.2rem;
-        text-align: left; /* Align left like about text */
-    }
+        text-align: left;
+        /* Align left like about text */
+      }
 
-    .skills-illustration iframe {
+      .skills-illustration iframe {
         max-width: 550px;
         height: 550px;
-    }
+      }
 
-    /* Experience section */
-    .experience-container {
+      /* Experience section */
+      .experience-container {
         max-width: 100%;
         margin: 0 auto;
-    }
+      }
 
-    .section-title {
+      .section-title {
         font-size: 3rem;
-        text-align: left; /* Align left like about title */
-        justify-content: flex-start; /* Remove center alignment */
-    }
+        text-align: left;
+        /* Align left like about title */
+        justify-content: flex-start;
+        /* Remove center alignment */
+      }
 
-    .section-title::after {
-        margin-left: 20px; /* Consistent with about section */
-    }
+      .section-title::after {
+        margin-left: 20px;
+        /* Consistent with about section */
+      }
 
-    .job-title {
+      .job-title {
         font-size: 1.6rem;
-        text-align: left; /* Align left */
-    }
+        text-align: left;
+        /* Align left */
+      }
 
-    .job-date {
+      .job-date {
         font-size: 1rem;
-        text-align: left; /* Align left */
-    }
+        text-align: left;
+        /* Align left */
+      }
 
-    .job-description li {
+      .job-description li {
         font-size: 1.1rem;
         margin-bottom: 1rem;
-        text-align: left; /* Align left */
-    }
+        text-align: left;
+        /* Align left */
+      }
 
-    /* Contact section */
-    .contact-section {
-        max-width: 100%; /* Match about section width */
+      /* Contact section */
+      .contact-section {
+        max-width: 100%;
+        /* Match about section width */
         margin: 0 auto;
-        text-align: center; /* Keep contact centered */
-    }
+        text-align: center;
+        /* Keep contact centered */
+      }
 
-    .contact-overline {
+      .contact-overline {
         font-size: 1.2rem;
-    }
+      }
 
-    .contact-title {
+      .contact-title {
         font-size: 4rem;
-    }
+      }
 
-    .contact-description {
+      .contact-description {
         font-size: 1.3rem;
-    }
+      }
 
-    .contact-btn {
+      .contact-btn {
         padding: 1.2rem 2rem;
         font-size: 1.1rem;
-    }
+      }
 
-    /* Footer */
-    .footer {
+      /* Footer */
+      .footer {
         font-size: 1rem;
+      }
     }
-}
 
     /* Extra large devices (large desktops, 1440px and up) */
     @media (min-width: 1440px) {
