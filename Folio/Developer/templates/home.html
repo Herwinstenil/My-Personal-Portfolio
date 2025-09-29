@@ -989,6 +989,11 @@
         left: 1%;
       }
 
+      .nav-container .nav-links {
+        position: absolute;
+        right: 1%;
+      }
+
       /* Make sure all sections have the same alignment */
       .section {
         padding: 100px 2rem;
@@ -1005,11 +1010,15 @@
       }
 
       /* Ensure navbar container aligns with content */
-      .nav-container {
+      /* Navbar fixes */
+    .nav-container {
         max-width: calc(100% - 200px);
         margin: 0 100px;
         padding: 0;
-      }
+        display: flex;
+        justify-content: space-between;
+        min-height: 60px; /* Ensure minimum height */
+    }
 
       .hero-content {
         max-width: 100%;
