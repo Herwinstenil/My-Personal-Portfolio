@@ -1010,14 +1010,13 @@
       }
 
       /* Ensure navbar container aligns with content */
-      /* Navbar fixes */
     .nav-container {
         max-width: calc(100% - 200px);
         margin: 0 100px;
         padding: 0;
         display: flex;
         justify-content: space-between;
-        min-height: 60px; /* Ensure minimum height */
+        min-height: 60px; 
     }
 
       .hero-content {
@@ -1124,6 +1123,11 @@
         left: 1%;
       }
 
+        .nav-container .nav-links {
+        position: absolute;
+        right: 1%;
+      }
+
       .section {
         padding: 80px 2rem;
         margin-left: 70px;
@@ -1149,9 +1153,13 @@
 
       /* Ensure content doesn't get too narrow */
       .nav-container {
-        max-width: 1000px;
-        margin: 0 auto;
-      }
+        max-width: calc(100% - 200px);
+        margin: 0 100px;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        min-height: 60px; 
+    }
 
       .hero-content {
         max-width: 900px;
