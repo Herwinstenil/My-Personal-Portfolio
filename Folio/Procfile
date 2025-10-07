@@ -1,1 +1,1 @@
-web: gunicorn Folio.wsgi
+web: gunicorn Folio.Folio.wsgi
