@@ -11,10 +11,14 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import sys
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Add the parent directory to Python path so Django can find Developer app
+sys.path.append(str(BASE_DIR.parent))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
@@ -26,7 +30,6 @@ SECRET_KEY = 'django-insecure-lzro7mj#as%ud3no!q(rs-7(n#ucquivavwdu5nz742q&0&ji6
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
 
 # Application definition
 
