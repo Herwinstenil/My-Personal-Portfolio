@@ -101,7 +101,7 @@
     }
 
     /* Mobile Menu */
-    .mobile-menu-btn {
+    .mobile-toggle {
       display: none;
       font-size: 1.8rem;
       color: #64ffda;
@@ -1663,7 +1663,7 @@
         display: flex;
       }
 
-      .mobile-menu-btn {
+      .mobile-toggle {
         display: block;
       }
 
@@ -1828,7 +1828,7 @@
   <nav class="navbar">
     <div class="nav-container">
       <a href="#hero" class="logo">Herwin Stenil</a>
-      <ul class="nav-links">
+      <ul class="nav-links" id="navLinks">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
@@ -1839,7 +1839,7 @@
     </div>
 
     <!-- Mobile Menu Button -->
-    <button class="mobile-menu-btn" aria-label="Toggle Navigation">
+    <button class="mobile-toggle" id="mobileToggle">
       <i class="fas fa-bars"></i>
     </button>
   </nav>
@@ -2399,14 +2399,6 @@
           }
         });
       }
-
-      // --- Mobile Menu Toggle ---
-      const mobileBtn = document.querySelector(".mobile-menu-btn");
-      const navLinks = document.querySelector(".nav-links");
-
-      if (mobileBtn && navLinks) {
-        mobileBtn.addEventListener("click", () => navLinks.classList.toggle("active"));
-      }
     });
 
     function typeWriterHTML(elementId, html, speed, callback) {
@@ -2437,6 +2429,49 @@
     document.addEventListener("DOMContentLoaded", function () {
       typeWriterHTML("type-title", "Herwin Stenil.", 100, function () {
       });
+    });
+
+    // Mobile Navigation Toggle - Fixed version
+    document.addEventListener('DOMContentLoaded', function () {
+      const mobileToggle = document.getElementById('mobileToggle');
+      const navLinks = document.querySelector('.nav-links');
+
+      if (mobileToggle && navLinks) {
+        mobileToggle.addEventListener('click', (e) => {
+          e.stopPropagation(); // Prevent event bubbling
+          navLinks.classList.toggle('active');
+
+          // Change icon based on state
+          const icon = mobileToggle.querySelector('i');
+          if (navLinks.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+          } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+          }
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+          link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            const icon = mobileToggle.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+          });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+          if (!navLinks.contains(e.target) && !mobileToggle.contains(e.target)) {
+            navLinks.classList.remove('active');
+            const icon = mobileToggle.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+          }
+        });
+      }
     });
   </script>
 </body>
